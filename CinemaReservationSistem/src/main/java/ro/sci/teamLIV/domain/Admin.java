@@ -1,6 +1,6 @@
 package ro.sci.teamLIV.domain;
 
-public class Admin extends AbstractModel{
+public class Admin {
     String adminName;
     String adminPassword;
 }

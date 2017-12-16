@@ -1,6 +1,6 @@
 package ro.sci.teamLIV.domain;
 
-public class Ticket extends AbstractModel{
+public class Ticket {
     float ticketPrice;
     enum ticketType {students, kids, adults, seniors}
 
