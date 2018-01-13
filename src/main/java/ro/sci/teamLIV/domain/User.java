@@ -22,7 +22,7 @@ public class User extends AbstractModel {
         return dao.getAll();
     }
 
-    public Collection<User> search( String query) {
+    public Collection<User> search(String query) {
         LOGGER.debug("Searching for " + query);
         return dao.searchByName(query);
     }
@@ -95,4 +95,38 @@ public class User extends AbstractModel {
     public void setUserId(double userId) {
         this.userId = userId;
     }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        User other = (User) obj;
+        if (firstName == null) {
+            if (other.firstName != null)
+                return false;
+        } else if (!firstName.equals(other.firstName))
+            return false;
+        if (lastName == null) {
+            if (other.lastName != null)
+                return false;
+        } else if (!lastName.equals(other.lastName))
+            return false;
+        if (email == null) {
+            if (other.email != null)
+                return false;
+        } else if (!email.equals(other.email))
+            return false;
+        if (phoneNumber == null) {
+            if (other.phoneNumber != null)
+                return false;
+        } else if (!phoneNumber.equals(other.phoneNumber))
+            return false;
+        return true;
+    }
+
 }
