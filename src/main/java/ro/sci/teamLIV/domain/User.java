@@ -27,21 +27,6 @@ public class User extends AbstractModel {
         return dao.searchByName(query);
     }
 
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        User user = (User) o;
-
-        if (Double.compare(user.userId, userId) != 0) return false;
-        if (firstName != null ? !firstName.equals(user.firstName) : user.firstName != null) return false;
-        if (lastName != null ? !lastName.equals(user.lastName) : user.lastName != null) return false;
-        if (email != null ? !email.equals(user.email) : user.email != null) return false;
-        return phoneNumber != null ? phoneNumber.equals(user.phoneNumber) : user.phoneNumber == null;
-    }
-
     @Override
     public int hashCode() {
         int result;
@@ -95,7 +80,6 @@ public class User extends AbstractModel {
     public void setUserId(double userId) {
         this.userId = userId;
     }
-
 
     @Override
     public boolean equals(Object obj) {
