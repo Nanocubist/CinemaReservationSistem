@@ -18,6 +18,11 @@ public class IMBaseDAO<T extends AbstractModel> implements BaseDAO<T> {
     }
 
     @Override
+    public T findByMovieName(String id) {
+        return null;
+    }
+
+
     public T findById(Long id) {
 
         return models.get(id);

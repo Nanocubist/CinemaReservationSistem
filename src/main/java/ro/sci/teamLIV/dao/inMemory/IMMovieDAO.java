@@ -8,9 +8,9 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-public abstract class IMMovieDAO extends IMBaseDAO<Movie> implements MovieDAO {
+public class IMMovieDAO extends IMBaseDAO<Movie> implements MovieDAO {
 
-    //    @Override
+    @Override
     public Collection<Movie> searchByMovieName(String query) {
         if (StringUtils.isEmpty(query)) {
             return getAll();
