@@ -8,10 +8,10 @@ import java.util.Collection;
 public interface BaseDAO<T extends AbstractModel> {
 
 	Collection<T> getAll();
-	
-	T findById(Long id);
-	
+
+	T findByMovieName(String id);
+
 	T update(T model);
-	
+
 	boolean delete(T model);
 }
