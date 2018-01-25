@@ -10,7 +10,7 @@
 <p  align="right">
 User:<input type="text" name="user">
 Password:<input type="text" name="password">
-<input type="button" value = "LOGIN" onclick="window.location.href='LOGIN.html'"/>
+<input type="button" value = "LOGIN" onclick="window.location.href='login'"/>
 </p>
 	<fieldset>
 			<legend><style>

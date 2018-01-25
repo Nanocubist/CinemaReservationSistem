@@ -47,7 +47,7 @@ table, td, th {
     </select>
 	</td></tr>
 	<tr><td>
-	<input  type="button" value = "Back" onclick="window.location.href='Program.html'"  />
+	<input  type="button" value = "Back" onclick="window.location.href='program.html'"  />
 	</td><td>
 	<input  type="button" value = "Select seats" onclick="window.location.href='seatSelector.html'"  />
 	</td></tr>
