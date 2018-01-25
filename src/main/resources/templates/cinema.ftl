@@ -19,10 +19,10 @@ Password:<input type="text" name="password">
 						}</style> CINEMA </legend>
 
 			<input type="button" value = "HOME" onclick="window.location.href='/'"  />
-			<input type="button" value="MOVIES" onclick="window.location.href='Movies.html'"/>
+			<input type="button" value="MOVIES" onclick="window.location.href='movies.html'"/>
 			<input type="button" value="PROGRAM" onclick="window.location.href='program.html'" />
 
-			<input type="button" value="NEWS" onclick=""/>
+			<input type="button" value="NEWS" onclick="window.location.href='news'"/>
 			<input type="button" value="CONTACT" onclick="window.location.href='Contact.html'"/>
 			SEARCH: <input type="textbox" id="search" />
 

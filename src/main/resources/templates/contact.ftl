@@ -1,9 +1,10 @@
 [#ftl]
 [#import "/spring.ftl" as spring /]
 
+<!DOCTYPE html>
 <html>
 <head>
-<TITLE>Program</TITLE>
+<TITLE>Contact</TITLE>
 </head>
 
 <body bgcolor="#737373">
@@ -19,10 +20,10 @@ Password:<input type="text" name="password">
 						}</style> CINEMA </legend>
 
 			<input type="button" value = "HOME" onclick="window.location.href='/'"  />
-			<input type="button" value="MOVIES" onclick="window.location.href='Movies.html'"/>
+			<input type="button" value="MOVIES" onclick="window.location.href='movies.html'"/>
 			<input type="button" value="PROGRAM" onclick="window.location.href='program.html'" />
 
-			<input type="button" value="NEWS" onclick=""/>
+			<input type="button" value="NEWS" onclick="window.location.href='news'"/>
 			<input type="button" value="CONTACT" onclick="window.location.href='Contact.html'"/>
 			SEARCH: <input type="textbox" id="search" />
 
@@ -40,6 +41,16 @@ Phone number:<br>
 Mesage:<br>
 <input type="text" name="mesage" style="height:200px;width:300px;" >
 <br>
+
+<input  type="button" value = "send" onclick="myFunction()"></button>
+
+<p id="send"></p>
+
+<script>
+function myFunction() {
+    document.getElementById("send").innerHTML = "Message sent";
+}
+</script>
 
 <p> Adress: Cluj-Napoca <br> Street: Eroilor Nr.1 <br> Phone number: 0264 123 </p>
 

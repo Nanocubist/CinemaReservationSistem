@@ -6,7 +6,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
-@RequestMapping("/Movies")
+@RequestMapping("/movies")
 public class MoviesController {
 
     @RequestMapping("")
@@ -14,8 +14,8 @@ public class MoviesController {
         return new ModelAndView("movies");
     }
 
-    @RequestMapping("/Movies")
-    public String Movies() {
+    @RequestMapping("/movies")
+    public String movies() {
         return "/";
     }
 }

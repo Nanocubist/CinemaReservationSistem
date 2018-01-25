@@ -19,10 +19,10 @@ Password:<input type="text" name="password">
 						}</style> CINEMA </legend>
 
 			<input type="button" value = "HOME" onclick="window.location.href='/'"  />
-			<input type="button" value="MOVIES" onclick="window.location.href='Movies.html'"/>
+			<input type="button" value="MOVIES" onclick="window.location.href='movies.html'"/>
 			<input type="button" value="PROGRAM" onclick="window.location.href='program.html'" />
 
-			<input type="button" value="NEWS" onclick=""/>
+			<input type="button" value="NEWS" onclick="window.location.href='news'"/>
 			<input type="button" value="CONTACT" onclick="window.location.href='Contact.html'"/>
 			SEARCH: <input type="textbox" id="search" />
 
@@ -64,16 +64,15 @@ Password:<input type="text" name="password">
     </td>
 <td><P ALIGN="center">
 	<A HREF="ticketTypeSelector.HTML">
-	15:00 18:00 21:00 <br>
-	20:00 22:40 <br>
-	18:00<br>
-	19:00 21:30<br>
-	19:30 22:00<br>
-	16:30 20:00 22:40<br>
-	15:00 18:00 21:00 <br>
-	18:30 21:00<br>
-	19:00 21:30<br>
-	</a>
+	    15:00  <br></a>
+    	20:00  <br>
+    	18:00<br>
+    	19:00 <br>
+    	22:00<br>
+    	16:00<br>
+    	17:00<br>
+    	21:00<br>
+    	19:00<br>
     </p>
     </td>
 <tr>

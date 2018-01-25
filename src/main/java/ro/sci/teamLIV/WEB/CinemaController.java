@@ -26,7 +26,25 @@ public class CinemaController {
     @RequestMapping("/ticketTypeSelector")
     public String ticketTypeSelector() { return "ticketTypeSelector";
     }
-    @RequestMapping("/login")
-    public String login() { return "login";
+    @RequestMapping("/addMovie")
+    public String addMovie() { return "addMovie";
+    }
+    @RequestMapping("/adminPage")
+    public String adminPage() { return "adminPage";
+    }
+    @RequestMapping("/editMovie")
+    public String editMovie() { return "editMovie";
+    }
+    @RequestMapping("/moviesList")
+    public String moviesList() { return "moviesList";
+    }
+    @RequestMapping("/printTicket")
+    public String printTicket() { return "printTicket";
+    }
+    @RequestMapping("/ticketConfirmation")
+    public String ticketConfirmation() { return "ticketConfirmation";
+    }
+    @RequestMapping("/news")
+    public String news() { return "news";
     }
 }

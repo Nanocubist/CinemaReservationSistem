@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<TITLE>Program</TITLE>
+<TITLE>Ticket Confirmation</TITLE>
 <style>
 table, td, th {
     border: 1px #737373;

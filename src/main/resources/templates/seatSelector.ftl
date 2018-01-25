@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<TITLE>seatSelector</TITLE>
+<TITLE>Seat selection</TITLE>
 <style>
 table, td, th {
     border: 15px solid grey;
@@ -31,7 +31,7 @@ td {
 	Studio:<br>
 	Please select your seats:<br>
     <input  type="button" value = "Back" onclick="window.location.href='ticketTypeSelector.html'" >
-	<input  type="button" value = "Next step" onclick="window.location.href='ticket.html'"  >
+	<input  type="button" value = "Next step" onclick="window.location.href='ticketConfirmation.html'"  >
 	</p>
 	<table ALIGN="center" bgcolor=lightblue width="100%">
 		<tr><td align="center">SCREEN</td></tr></table>
