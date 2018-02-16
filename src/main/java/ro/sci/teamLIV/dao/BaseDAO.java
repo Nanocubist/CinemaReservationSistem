@@ -9,7 +9,7 @@ public interface BaseDAO<T extends AbstractModel> {
 
 	Collection<T> getAll();
 
-	T findByMovieName(String id);
+	T findByMovieName(String movieID);
 
 	T update(T model);
 

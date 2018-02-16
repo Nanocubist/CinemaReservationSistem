@@ -4,11 +4,12 @@ import java.util.Date;
 
 public class Movie extends AbstractModel {
 
+    public String movieName;
     public MovieType movieType;
     public MovieGenreType movieGenreType;
-    public String movieName;
     public String movieDuration;
     public Date movieDate;
+
 
 
     public MovieType getMovieType() {
@@ -53,8 +54,8 @@ public class Movie extends AbstractModel {
 
     @Override
     public String toString() {
-        return "Employee [movieName=" + movieName + ", movieDuration=" + movieDuration + ", movieDate=" + movieDate
-                + "movieType=" + movieType + "movieGenreType=" + movieGenreType + "]";
+        return "Movie [movieName=" + movieName + ", movieType=" + movieType + ", movieGenreType="
+                + movieGenreType + ", movieDuration=" + movieDuration + ", movieDate=" + movieDate + "]";
     }
 
     @Override
@@ -63,10 +64,53 @@ public class Movie extends AbstractModel {
         int result = 1;
         result = prime * result + ((movieName == null) ? 0 : movieName.hashCode());
         result = prime * result + ((movieType == null) ? 0 : movieType.hashCode());
+        result = prime * result + ((movieGenreType == null) ? 0 : movieGenreType.hashCode());
         result = prime * result + ((movieDuration == null) ? 0 : movieDuration.hashCode());
         result = prime * result + ((movieDate == null) ? 0 : movieDate.hashCode());
-        result = prime * result + ((movieGenreType == null) ? 0 : movieGenreType.hashCode());
+
         return result;
     }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Movie other = (Movie) obj;
+        if (movieName == null) {
+            if (other.movieName != null)
+                return false;
+        } else if (!movieName.equals(other.movieName))
+            return false;
+        if (movieType == null) {
+            if (other.movieType != null)
+                return false;
+        } else if (!movieType.equals(other.movieType))
+            return false;
+        if (movieGenreType == null) {
+            if (other.movieGenreType != null)
+                return false;
+        } else if (!movieGenreType.equals(other.movieGenreType))
+            return false;
+        if (movieDuration != other.movieDuration)
+            return false;
+        if (movieDuration == null) {
+            if (other.movieDuration != null)
+                return false;
+        } else if (!movieDuration.equals(other.movieDuration))
+            return false;
+        if (movieDate == null) {
+            if (other.movieDate != null)
+                return false;
+        } else if (!movieDate.equals(other.movieDate))
+            return false;
+        return true;
+    }
+
+
 
 }

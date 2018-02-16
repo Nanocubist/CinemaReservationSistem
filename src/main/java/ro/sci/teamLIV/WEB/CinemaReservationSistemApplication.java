@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import ro.sci.teamLIV.domain.Movie;
 
 @SpringBootApplication
 @EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class}) //un hack ca sa porneasca, nu stiu ce face
@@ -14,6 +15,9 @@ public class CinemaReservationSistemApplication {
 
 
 		SpringApplication.run(CinemaReservationSistemApplication.class, args);
+
+
+
 
 
 

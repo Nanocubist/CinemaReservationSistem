@@ -26,9 +26,9 @@ public class MovieService {
         return daoMovie.searchByMovieName(query);
     }
 
-    public boolean delete(String movie) {
-        LOGGER.debug("Deleting movie by name: " + movie);
-        Movie movie1 = daoMovie.findByMovieName(movie);
+    public boolean delete(String movieID) {
+        LOGGER.debug("Deleting movie by name: " + movieID);
+        Movie movie1 = daoMovie.findByMovieName(movieID);
         if (movie1 != null) {
             daoMovie.delete(movie1);
             return true;
@@ -37,9 +37,9 @@ public class MovieService {
         return false;
     }
 
-    public Movie get(String movie) {
-        LOGGER.debug("Getting movie by name: " + movie);
-        return daoMovie.findByMovieName(movie);
+    public Movie get(String movieID) {
+        LOGGER.debug("Getting movie by name: " + movieID);
+        return daoMovie.findByMovieName(movieID);
 
     }
 
