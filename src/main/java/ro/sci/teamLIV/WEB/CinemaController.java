@@ -64,34 +64,18 @@ public class CinemaController {
     }
 
     @Autowired
-    private MovieService movieService;
+    public MovieService movieService;
 
-    @RequestMapping("moviesList")
+    @RequestMapping("/moviesList")
     public ModelAndView moviesList() throws ValidationException {
         ModelAndView result = new ModelAndView("moviesList");
 
-        Movie m = new Movie();
-        index++;
-        m.setMovieName("ionut movie");
-        m.setMovieDuration("120");
-        m.setMovieDate(new Date(10/10/2010));
-        m.setMovieGenreType(MovieGenreType.ACTION);
-        m.setMovieType(MovieType.FOUR_D);
-//        m.setFirstName("First - name - " + index);
-//        m.setLastName("Last - name - " + index);
-//        m.setGender(Gender.FEMALE);
-//        m.setBirthDate(new Date(30, 1, 1));
-//        m.setEmploymentDate(new Date(50, 1, 1));
-//        m.setJobTitle("Dev");
-        movieService.save(m);
 
-        Collection<Movie> movies = movieService.listAll();
-        movies.add(m);
-        result.addObject("movies", movies);
+        Collection<Movie> moviesList = movieService.listAll();
+        result.addObject("movies", moviesList);
 
         return result;
     }
-
 
 
     //---------------------------------------------------
@@ -106,10 +90,11 @@ public class CinemaController {
         return "editMovie";
     }
 
-//    @RequestMapping("/moviesList")
-//    public String moviesList() {
-//        return "moviesList";
-//    }
+    @RequestMapping("/delete")
+    public String delete(long id) {
+        movieService.delete(id);
+        return "redirect:/moviesList";
+    }
 
     @RequestMapping("/printTicket")
     public String printTicket() {
@@ -128,7 +113,7 @@ public class CinemaController {
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/save")
-    public ModelAndView save(Movie movie) throws ValidationException {
+    public ModelAndView save(Movie movie) throws ValidationException { //am schimbat model and view cu string
 
         movieService.save(movie);
 
@@ -136,6 +121,63 @@ public class CinemaController {
         ModelAndView result = new ModelAndView();
         result.setView(redirectView);
         return result;
+        //return "redirect:/";
     }
 
+    public void initializeMovies() {
+
+        try {
+            Movie movie1 = new Movie();
+            movie1.setMovieName("Black Panther");
+            movie1.setMovieDuration("134");
+            movie1.setMovieDate(new Date("01/29/2018"));
+            movie1.setMovieType(MovieType.THREE_D);
+            movie1.setMovieGenreType(MovieGenreType.SCI_FI);
+            movieService.save(movie1);
+
+            Movie movie2 = new Movie();
+            movie2.setMovieName("Jumanji: Welcome to the Jungle");
+            movie2.setMovieDuration("119");
+            movie2.setMovieDate(new Date("12/29/2017"));
+            movie2.setMovieType(MovieType.THREE_D);
+            movie2.setMovieGenreType(MovieGenreType.COMEDY);
+            movieService.save(movie2);
+
+            Movie movie3 = new Movie();
+            movie3.setMovieName("Thor: Ragnarok");
+            movie3.setMovieDuration("130");
+            movie3.setMovieDate(new Date("10/10/2017"));
+            movie3.setMovieType(MovieType.THREE_D);
+            movie3.setMovieGenreType(MovieGenreType.FICTION);
+            movieService.save(movie3);
+
+            Movie movie4 = new Movie();
+            movie4.setMovieName("King Arthur: Legend of the Sword");
+            movie4.setMovieDuration("126");
+            movie4.setMovieDate(new Date("19/04/2017"));
+            movie4.setMovieType(MovieType.TWO_D);
+            movie4.setMovieGenreType(MovieGenreType.FICTION);
+            movieService.save(movie4);
+
+            Movie movie5 = new Movie();
+            movie5.setMovieName("Fantastic Beasts and Where to Find Them");
+            movie5.setMovieDuration("133");
+            movie5.setMovieDate(new Date("18/11/2016"));
+            movie5.setMovieType(MovieType.THREE_D);
+            movie5.setMovieGenreType(MovieGenreType.FICTION);
+            movieService.save(movie5);
+
+            Movie movie6 = new Movie();
+            movie6.setMovieName("Logan Lucky");
+            movie6.setMovieDuration("119");
+            movie6.setMovieDate(new Date("09/09/2017"));
+            movie6.setMovieType(MovieType.TWO_D);
+            movie6.setMovieGenreType(MovieGenreType.ACTION);
+            movieService.save(movie6);
+
+
+        } catch (ValidationException e) {
+            e.printStackTrace();
+        }
+    }
 }

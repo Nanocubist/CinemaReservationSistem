@@ -7,7 +7,8 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class IMBaseDAO<T extends AbstractModel> implements BaseDAO<T> {
-    private Map<Long, T> models = new HashMap<Long, T>();
+
+    protected Map<Long, T> models = new HashMap<Long, T>();
 
     private static AtomicLong ID = new AtomicLong(System.currentTimeMillis());
 
@@ -15,11 +16,6 @@ public class IMBaseDAO<T extends AbstractModel> implements BaseDAO<T> {
     public Collection<T> getAll() {
 
         return models.values();
-    }
-
-    @Override
-    public T findByMovieName(String id) {
-        return null;
     }
 
 

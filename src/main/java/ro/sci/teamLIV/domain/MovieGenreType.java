@@ -8,5 +8,8 @@ public enum MovieGenreType {
     ACTION,
     COMEDY,
     HORROR,
-    FICTION
+    FICTION,
+    THRILLER,
+    SCI_FI,
+    CRIME
 }

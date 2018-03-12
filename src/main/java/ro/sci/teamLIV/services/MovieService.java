@@ -5,13 +5,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.util.StringUtils;
 import ro.sci.teamLIV.dao.MovieDAO;
 import ro.sci.teamLIV.domain.Movie;
+import ro.sci.teamLIV.domain.MovieGenreType;
+import ro.sci.teamLIV.domain.MovieType;
 
 import javax.xml.bind.ValidationException;
 import java.util.*;
 
-/**
- * Created by camarasanvlad on 12/16/17.
- */
 
 public class MovieService {
 
@@ -19,16 +18,18 @@ public class MovieService {
 
     private MovieDAO daoMovie;
 
-    public Collection<Movie> listAll() { return daoMovie.getAll();}
+    public Collection<Movie> listAll() {
+        return daoMovie.getAll();
+    }
 
-    public Collection<Movie> search( String query) {
+    public Collection<Movie> search(String query) {
         LOGGER.debug("Searching for " + query);
         return daoMovie.searchByMovieName(query);
     }
 
-    public boolean delete(String movieID) {
+    public boolean delete(Long movieID) {
         LOGGER.debug("Deleting movie by name: " + movieID);
-        Movie movie1 = daoMovie.findByMovieName(movieID);
+        Movie movie1 = daoMovie.findById(movieID);
         if (movie1 != null) {
             daoMovie.delete(movie1);
             return true;
@@ -37,42 +38,42 @@ public class MovieService {
         return false;
     }
 
-    public Movie get(String movieID) {
+    public Movie get(Long movieID) {
         LOGGER.debug("Getting movie by name: " + movieID);
-        return daoMovie.findByMovieName(movieID);
+        return daoMovie.findById(movieID);
 
     }
 
     public void save(Movie movie) throws ValidationException {
         LOGGER.debug("Saving movie: " + movie);
-        validate(movie);
+        //validate(movie);
 
         daoMovie.update(movie);
     }
 
-    private void validate(Movie movie) throws ValidationException {
-        Date currentDate = new Date();
-        List<String> errors = new LinkedList<>();
-        if (StringUtils.isEmpty(movie.getMovieName())) {
-            errors.add("Movies Name is Empty");
-        }
-
-        if (StringUtils.isEmpty(movie.getMovieDuration())) {
-            errors.add("Movie Duration is Empty");
-        }
-
-        if (movie.getMovieDate() == null) {
-            errors.add("Movie Date is Empty");
-        } else {
-            if (currentDate.after(movie.getMovieDate())) {
-                errors.add("Movie Date is in the past");
-            }
-        }
-
-        if (!errors.isEmpty()) {
-            throw new ValidationException(String.valueOf(errors.toArray(new String[] {})));
-        }
-    }
+//    private void validate(Movie movie) throws ValidationException {
+//        Date currentDate = new Date();
+//        List<String> errors = new LinkedList<>();
+//        if (StringUtils.isEmpty(movie.getMovieName())) {
+//            errors.add("Movies Name is Empty");
+//        }
+//
+//        if (StringUtils.isEmpty(movie.getMovieDuration())) {
+//            errors.add("Movie Duration is Empty");
+//        }
+//
+//        if (movie.getMovieDate() == null) {
+//            errors.add("Movie Date is Empty");
+//        } else {
+//            if (currentDate.after(movie.getMovieDate())) {
+//                errors.add("Movie Date is in the past");
+//            }
+//        }
+//
+//        if (!errors.isEmpty()) {
+//            throw new ValidationException(String.valueOf(errors.toArray(new String[] {})));
+//        }
+//    }
 
     public MovieDAO getDao() {
         return daoMovie;

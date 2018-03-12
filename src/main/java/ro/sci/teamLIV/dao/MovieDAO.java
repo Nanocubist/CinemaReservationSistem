@@ -7,5 +7,4 @@ import java.util.Collection;
 public interface MovieDAO extends BaseDAO<Movie> {
 
     Collection<Movie> searchByMovieName(String query);
-
 }

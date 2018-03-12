@@ -17,9 +17,9 @@ public class IMMovieDAO extends IMBaseDAO<Movie> implements MovieDAO {
         }
 
         Collection<Movie> all = new LinkedList<>(getAll());
-        for (Iterator<Movie> it = all.iterator(); it.hasNext();) {
+        for (Iterator<Movie> it = all.iterator(); it.hasNext(); ) {
             Movie emp = it.next();
-            String ss = emp.getMovieName() + " " + emp.getMovieDate();
+            String ss = emp.getMovieName();
             if (!ss.toLowerCase().contains(query.toLowerCase())) {
                 it.remove();
             }

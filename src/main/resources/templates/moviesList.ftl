@@ -1,6 +1,5 @@
 [#ftl]
-
-
+[#import "/spring.ftl" as spring /]
 <html>
 
 <head>
@@ -10,13 +9,10 @@
 <body bgcolor="#737373">
 You are logged in as ADMIN<br><br>
 
-	Movies<br>
+    <b>Here is the movie list from your In_Memory_DB:</b>
+    <br><br>
 
-    <p><b>Movies List</b>
-    </p>
-
-    <a href="addMovies">ADD</a>
-    <table class="table">
+<table class="table">
     <tr>
         <th>Movie Name</th>
         <th>Movie Genre Type</th>
@@ -26,22 +22,24 @@ You are logged in as ADMIN<br><br>
         <th></th>
     </tr>
 
-[#list movies as movie]
-<tr>
-    <td>${movie.movieName}</td>
-    <td>${movie.movieGenreType}</td>
-    <td>${movie.movieType}</td>
-    <td>${movie.movieDuration}</td>
-    <td>${movie.movieDate?string('dd/MM/yyyy')}</td>
-</tr>
-[/#list]
+    [#list movies as movie]
+    <tr>
+        <td align="center">${movie.movieName}</td>
+        <td align="center">${movie.movieGenreType}</td>
+        <td align="center">${movie.movieType}</td>
+        <td align="center">${movie.movieDuration}</td>
+        <td align="center">${movie.movieDate?string('dd/MM/yyyy')}</td>
+        <td align="center"><a href="/delete?id=${movie.id?c}">
+            Remove
+            </a>
 
+        </td>
+    </tr>
+    [/#list]
 
 </table>
 
-
 	<input  type="button" value = "Back" onclick="window.location.href='adminPage.html'"  />
-	<input  type="button" value = "Edit-Delete Movies" onclick="window.location.href='moviesList.html'"  />
 
 </body>
 </html>

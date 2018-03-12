@@ -11,30 +11,32 @@
 
 <form method="POST" action="/save">
 
-	Enter movie name: <input name="movieName" type="textbox" id="enterMovieName" value="${movie.movieName!''}" /><br><br>
+Enter movie name: <input name="movieName" type="textbox" id="enterMovieName" value="${movie.movieName!''}" /><br><br>
 
-	Select movieType:<br>
-	<select>
-  <option name="movieType" value="TWO_D">2D</option>
-  <option name="movieType" value="THREE_D">3D</option>
-  <option name="movieType" value="FOUR_D">4D</option>
-  </select><br><br>
 
-	Select movieGenreType:<br>
-	<input type="checkbox" name="action" value="movieGenreType"/> Action<br>
-    <input type="checkbox" name="comedy" value="movieGenreType"/> Comedy<br>
-	<input type="checkbox" name="Adventure" value="movieGenreType"/> Adventure<br>
-	<input type="checkbox" name="Crime" value="movieGenreType"/> Crime<br>
-	<input type="checkbox" name="Thriller" value="movieGenreType"/> Thriller<br>
-	<input type="checkbox" name="Sci-Fi" value="movieGenreType-Fi"/> Sci-Fi<br><br>
+Select movieType:<br>
+<select name="movieType" value="${movie.movieType!''}" >
+<option  value="TWO_D">2D</option>
+<option  value="THREE_D">3D</option>
+<option  value="FOUR_D">4D</option>
+</select><br><br>
+
+
+<select name="movieGenreType" value="${movie.MovieGenreType!''}" >
+<option  value="ACTION">ACTION</option>
+<option  value="COMEDY">COMEDY</option>
+<option  value="HORROR">HORROR</option>
+<option  value="FICTION">FICTION</option>
+<option  value="THRILLER">THRILLER</option>
+<option  value="SCI_FI">SCI_FI</option>
+<option  value="CRIME">CRIME</option>
+</select>
 
 	Enter movie duration(minutes): <input name="movieDuration" type="textbox" value="${movie.movieDuration!''}" id="enterMovieDuration" /><br><br>
 
-	Select movieDate:
-	<select>
-  <option name="movieDate" value="23">23/10/2018</option>
+	Select movieDate(dd/mm/year):
+	  <input name="movieDate" type="input" value="[#if movie.movieDate??]${movie.movieDate?string('dd/MM/yyyy')}[/#if]" class="form-control" placeholder="Movie Date" aria-describedby="basic-addon1">
 
-</select><br><br>
 
 
 	<input  type="button" value = "Back" onclick="window.location.href='adminPage'"  />

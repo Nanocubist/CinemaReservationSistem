@@ -17,7 +17,7 @@ table, td, th {
 	<tr><td>
 	Ticket type</td><td> Quantity </td></tr>
 	<tr><td>
-	Hormal</td><td>
+	Normal</td><td>
 	<select>
   <option value="0">0</option>
   <option value="1">1</option>
