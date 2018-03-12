@@ -22,3 +22,18 @@ public class CinemaReservationSistemApplication {
         context.getBean(CinemaController.class).initializeMovies();
     }
 }
+
+/* Contributors: Ionut Bogdan, Camarasan Vlad, Laurentiu Miron:
+       [Students of Informal School of IT Cluj-Napoca - Java Development. July 2017 - March 2018]
+
+       This is a Cinema Reservation Sistem Application
+
+       You can start the application by running it and then connecting through browser to: "http://localhost:8080/"
+       You can access Add / List and Delete features from Admin Console button.
+       The application was preloaded with 6 movies in CinemaController -> initializeMovies
+
+       The Application has 95% of entities and services defined but needs lots of updates and improvement!
+
+       Working features: Add, List, Remove [front side is 85% done but needs to be connected to the back functionality]
+       Features for future updates: Edit, Reserve ticket, Print ticket and others like:
+       [db connection, unit testing, user registration, security, change some static content from website with dynamic]*/
